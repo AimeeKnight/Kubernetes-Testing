@@ -46,7 +46,7 @@ kubectl rollout status deployment/test-deployment
 
 # 9. Test persistent volume creation
 echo -e "\nTesting persistent volume capabilities..."
-kubectl apply -f persistent-volume-claim.yaml
+kubectl apply -f pvc.yaml
 
 # 10. Verify CoreDNS and kube-proxy
 echo -e "\nVerifying core services..."
