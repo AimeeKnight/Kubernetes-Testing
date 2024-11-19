@@ -17,26 +17,7 @@ kubectl describe nodes
 
 # 3. Test basic pod deployment
 echo -e "\nTesting basic pod deployment..."
-cat <<EOF | kubectl apply -f -
-apiVersion: apps/v1
-kind: Deployment
-name: test-deployment
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: nginx-test
-  template:
-    metadata:
-      labels:
-        app: nginx-test
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
-EOF
+cat <<EOF | kubectl apply -f test-deployment.yaml
 
 # 4. Wait for pods to be ready
 echo "Waiting for pods to be ready..."
