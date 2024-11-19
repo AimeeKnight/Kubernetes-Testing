@@ -46,18 +46,7 @@ kubectl rollout status deployment/test-deployment
 
 # 9. Test persistent volume creation
 echo -e "\nTesting persistent volume capabilities..."
-cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: test-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-EOF
+kubectl apply -f persistent-volume-claim.yaml
 
 # 10. Verify CoreDNS and kube-proxy
 echo -e "\nVerifying core services..."
