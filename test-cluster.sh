@@ -17,7 +17,7 @@ kubectl describe nodes
 
 # 3. Test basic pod deployment
 echo -e "\nTesting basic pod deployment..."
-cat <<EOF | kubectl apply -f test-deployment.yaml
+kubectl apply -f test-deployment.yaml
 
 # 4. Wait for pods to be ready
 echo "Waiting for pods to be ready..."
